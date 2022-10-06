@@ -6,7 +6,7 @@ from django.views.generic import ListView, DetailView
 class PostList(ListView):
     model = Post
     ordering = '-pk'
-    # 템플릿 모델명_list.html : post_list.html
+    #템플릿 모델명_list.html : post_list.html
     #파라미터 모델명_list : post_list
 
 class PostDetail(DetailView):
