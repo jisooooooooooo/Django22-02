@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
-    <link href="{% static 'ch4/bootstrap4/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="screen">
+    <link href="{% static 'blog/bootstrap4/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
 
@@ -79,8 +79,9 @@
       <div class="row">
         <div class="col-md-8 col-lg-9">
           <h2>Blog</h2>
+            {% for p in post_list %}
           <div class="card mb-4">
-            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
+            <a href="#!"><img class="card-img-top" src="{{p.head_image.url}}" alt="{{p}}의 head_image" /></a>
             <div class="card-body">
                 <div class="small text-muted">January 1, 2022</div>
                 <h2 class="card-title">Featured Post Title</h2>
