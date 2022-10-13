@@ -19,7 +19,7 @@ class TestView(TestCase):
         # navbar가 정상적으로 보이는지
         navbar = soup.nav
         self.assertIn('Blog', navbar.text)
-        self.assertIn('About_Me', navbar.text)
+        self.assertIn('AboutMe', navbar.text)
         # Post가 정상적으로 보이는지
         # 1. 맨 처음엔 Post가 하나도 안보임
         self.assertEqual(Post.objects.count(),0)
@@ -49,4 +49,4 @@ class TestView(TestCase):
 
         navbar = soup.nav
         self.assertIn('Blog', navbar.text)
-        self.assertIn('About_Me', navbar.text)
+        self.assertIn('AboutMe', navbar.text)
