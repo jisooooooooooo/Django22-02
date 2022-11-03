@@ -120,7 +120,7 @@ USE_TZ = False
 
 STATIC_URL = 'static/'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/media/' #이미지 폴더 지정하기
 MEDIA_ROOT = os.path.join(BASE_DIR,'_media')
 
 # Default primary key field type
