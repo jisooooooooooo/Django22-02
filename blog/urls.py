@@ -9,9 +9,10 @@ urlpatterns = [ # IP주소/blog
 
     path('',views.PostList.as_view()),
     path('<int:pk>/',views.PostDetail.as_view()),
-    path('category/<str:slug>/',views.category_page)
+    path('category/<str:slug>/',views.category_page), # IP주소/blog/category/slug/
+    path('tag/<str:slug>/', views.tag_page), #IP주소/blog/tag/slug/
+
     #path('',views.index), #IP주소/blog
     #path('<int:pk>/',views.single_post_page)
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
