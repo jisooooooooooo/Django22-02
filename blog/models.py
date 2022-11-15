@@ -10,6 +10,9 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self): #IP주소/blog/tag/slug/
+        return f'/blog/tag/{self.slug}/'
+
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=200, unique=True, allow_unicode=True)
@@ -33,7 +36,7 @@ class Post(models.Model):
 
     head_image = models.ImageField(upload_to='blog/images/%Y/%m/%d/', blank=True)
     # %Y 2022, %y 22
-    file_unload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True)
+    file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

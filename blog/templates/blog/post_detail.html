@@ -6,7 +6,7 @@
 
 {% block main_area %}
                     <!-- Post content-->
-                    <div id="post-area"> #포스트 영역 구분
+                    <div id="post-area">
                         <!-- Post header-->
                         <header class="mb-4">
                             <!-- Post title-->
@@ -20,10 +20,14 @@
                             <!-- Post categories-->
                             {% if post.category %}
                             <a class="badge bg-secondary text-decoration-none link-light"
-                               href="{{post.category.get_absolute_url}}">{{post.category}}</a>
+                               href="{{post.category.get_absolute_url}}">
+                                {{post.category}}
+                            </a>
                             {% else %}
                             <a class="badge bg-secondary text-decoration-none link-light"
-                               href="/blog/category/no_category/">미분류</a>
+                               href="/blog/category/no_category/">
+                                미분류
+                            </a>
                             {% endif %}
                         </header>
                         <!-- Preview image figure-->
@@ -39,9 +43,9 @@
                             <p class="fs-5 mb-4">{{post.content}}</p>
                             {% if post.tags.exists %}
                                 <i class="fas fa-tag"></i>
-                                {% for t in post.tags.iterater %}
+                                {% for t in post.tags.iterator %}
                                     <span class="badge badge-pill badge-light">
-                                        <a href="{{t.absolute_url}}">{{t}}</a>
+                                        <a href="{{t.get_absolute_url}}">{{t}}</a>
                                     </span>
                                 {% endfor %}
                                 <br><br>
